@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    figure{
+        position: relative;
+        &:before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            display: block;
+            content: "";
+            width: 0;
+            height: 0;
+            background: rgba(225,225,255,.2);
+            border-radius: 100%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+        }
+        &:hover:before{
+            animation: circle 1s;
+        }
+    }
+    img{
+        width: 100%;
+    }
+    figure:hover img{
+        border-radius: 50%;
+        transition: 1s ease-in-out;
+    }
+    @keyframes circle{
+        0%{
+            opacity: 0;
+        }
+        40%{
+            opacity: 1;
+        }
+        100%{
+            width: 200%;
+            height: 200%;
+            opacity: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="Circle">
+        <figure>
+        <img src="Images/Circle.jpg" alt="">
+        </figure>
+    </div>
+</div>
+</body>
+</html>
